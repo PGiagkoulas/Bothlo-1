@@ -23,10 +23,6 @@ public class GameState extends BasicGameState {
 	private Animation Warrior , upW ,downW,leftW,rightW;
 	private Enemy BothloE = new Enemy("Bothlo", 1, 120, 3, 1,10, 8, 240,192,1, 0.5,0.2);
 
-	/*Enemy(String name, int attribute, int life, int movement, int range,
-						int damage, int armor, int positionX, int positionY, int level, double lifeModifier,
-						double damageModifier) */
-
 	private Animation Bothlo ,downB;
 	private Image inGameMenu;
 	private boolean[][] traps;
@@ -220,7 +216,7 @@ public class GameState extends BasicGameState {
 							x=240f;
 							y=569f;
 							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.y= 240;
 							JOptionPane.showMessageDialog (null, "You made the demon follow you back in the volcano. Destroy it!", "", JOptionPane.INFORMATION_MESSAGE);
 						}
 						if(level==0){
@@ -229,8 +225,8 @@ public class GameState extends BasicGameState {
 							init(gc, arg2);
 							x=240f;
 							y=569f;
-							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.x= (int)x;
+							enemyPos.y= (int)y+32;
 						}
 						
 					}
@@ -269,7 +265,7 @@ public class GameState extends BasicGameState {
 							x=240f;
 							y=569f;
 							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.y= 240;
 							JOptionPane.showMessageDialog (null, "You made the demon follow you back in the volcano. Destroy it!", "", JOptionPane.INFORMATION_MESSAGE);
 						}
 						if(level==0){
@@ -278,8 +274,8 @@ public class GameState extends BasicGameState {
 							init(gc, arg2);
 							x=240f;
 							y=569f;
-							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.x= (int)x;
+							enemyPos.y= (int)y+32;
 						}
 					}
 					
@@ -319,7 +315,7 @@ public class GameState extends BasicGameState {
 							x=240f;
 							y=569f;
 							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.y= 240;
 							JOptionPane.showMessageDialog (null, "You made the demon follow you back in the volcano. Destroy it!", "", JOptionPane.INFORMATION_MESSAGE);
 						}
 						if(level==0){
@@ -328,8 +324,8 @@ public class GameState extends BasicGameState {
 							init(gc, arg2);
 							x=240f;
 							y=569f;
-							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.x= (int)x;
+							enemyPos.y= (int)y+32;
 						}
 					}
 					x -= SIZE;
@@ -363,7 +359,7 @@ public class GameState extends BasicGameState {
 							x=240f;
 							y=569f;
 							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.y= 240;
 							JOptionPane.showMessageDialog (null, "You made the demon follow you back in the volcano. Destroy it!", "", JOptionPane.INFORMATION_MESSAGE);
 						}
 						if(level==0){
@@ -372,8 +368,8 @@ public class GameState extends BasicGameState {
 							init(gc, arg2);
 							x=240f;
 							y=569f;
-							enemyPos.x= 240;
-							enemyPos.y= 32;
+							enemyPos.x= (int)x;
+							enemyPos.y= (int)y+32;
 						}
 					}
 					
@@ -391,11 +387,6 @@ public class GameState extends BasicGameState {
 		if(input.isKeyDown(Input.KEY_A)){
 			attack = true;
 			System.out.println("Currently in attack mode");
-			//if(isDead(BothloE)){
-				//JOptionPane.showMessageDialog (null, "You managed to slay the demon and save the world!", "You Are Victorious!", JOptionPane.INFORMATION_MESSAGE);
-				//JOptionPane.showMessageDialog (null, "...at least for now...", "", JOptionPane.WARNING_MESSAGE);
-			//}
-
 		}
 		if(attack == true && commitedAttack==false){
 			if(xdif<=32 && ydif<=32){
@@ -599,7 +590,7 @@ public class GameState extends BasicGameState {
 		x=240f;
 		y=569f;
 		enemyPos.x= 240;
-		enemyPos.y= 32;
+		enemyPos.y= 240;
 	}
 	public boolean isDead(Enemy E){
 		if(E.getLife()<=0){

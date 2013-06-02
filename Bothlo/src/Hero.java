@@ -83,13 +83,6 @@ public class Hero extends Character{
 		selected = false;
 	}
 
-	//sets new rune attribute
-	public void equipRune(Rune rune){
-		changeStats(rune.getDamageBonus(),rune.getArmorBonus());
-
-		equippedRune = rune.attribute;
-	}
-
 	//changes stats
 	private void changeStats(int dmgB, int armB){
 
