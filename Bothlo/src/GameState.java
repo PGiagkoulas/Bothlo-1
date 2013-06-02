@@ -175,7 +175,7 @@ public class GameState extends BasicGameState {
 
 			//checking maximum movement reached
 			
-			if(heroMovement <= Hero.getHeroInstance().getMovement()*SIZE){
+			if(heroMovement < Hero.getHeroInstance().getMovement()*SIZE){
 				
 				if (input.isKeyPressed(Input.KEY_UP))
 				{
@@ -301,7 +301,7 @@ public class GameState extends BasicGameState {
 					
 
 					if ((isTrap(x - fdelta, y) || isTrap(x - fdelta, y+SIZE-1)))
-					{
+					{//Gia na min trws apeires fores damage apo pagida ston idio gyro
 						if(!tookDamage){
 							Hero.getHeroInstance().changeLife(3);
 
@@ -311,8 +311,9 @@ public class GameState extends BasicGameState {
 					if ((isWarp(x + SIZE, y) || isWarp(x + SIZE , y+SIZE-1)))
 					{
 						if(level==1){
-							
+							//gia na min kounietai oso yparxoun ta OptionPanes
 							attack=true;
+							//allagi pistas,ananewsi othonis, ananewsi topothesias xaraktirwn
 							level++;
 							init(gc, arg2);
 							x=240f;
@@ -339,7 +340,7 @@ public class GameState extends BasicGameState {
 				{
 					Warrior = rightW;
 
-					input.consumeEvent();
+					
 					//character limit on right movement
 					if(x>452)
 						x=452;
@@ -406,16 +407,14 @@ public class GameState extends BasicGameState {
 					attack=false;
 				}	
 				
-				if(isDead(BothloE)){
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-
-						e.printStackTrace();
-					}
+				if(!isDead(BothloE)){
+					
+						
+						Bothlo.draw(enemyPos.x,enemyPos.y);
 				}
 				if(isDead(BothloE)){
 					try {
+						
 						Thread.sleep(100);
 					} catch (InterruptedException e) {
 
@@ -424,7 +423,7 @@ public class GameState extends BasicGameState {
 					if(isDead(BothloE)){
 						JOptionPane.showMessageDialog (null, "You managed to slay the demon and save the world!", "You Are Victorious!", JOptionPane.INFORMATION_MESSAGE);
 						JOptionPane.showMessageDialog (null, "...at least for now...", "", JOptionPane.WARNING_MESSAGE);
-						System.exit(0);}
+						}
 				}
 			}
 
@@ -442,6 +441,7 @@ public class GameState extends BasicGameState {
 			if(isDead(BothloE)){
 				enemyTurn= false;
 				input.clearKeyPressedRecord();
+				System.exit(0);
 			}
 
 			heroMovement = 0;	
