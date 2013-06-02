@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="20" tilewidth="30" tileheight="30">
+ <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
+  <image source="BothloTryOvr9000/src/DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <tileset firstgid="3073" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
+  <image source="../../../../Desktop/Bothlo/Bothlo/res/DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="16" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC31USQ7EIAybAxcatk8B/f+LBiRHMhYzhyiBhNhZ2h4+n7qkL5nQA3Ze8kLU3yH7bSK/x8YlBXeTfK4T/C/hOVYENt9Nitu60VvOMcEpCifn0pE7X7C375G69zvDfaNYQ7xiR+L44t1D+RxnkF0vdXbKWSAVuB7X0UeTfIPOM5x1ay+L4KVw7gD3OEod3PtEuBM1J7yJ4P4QtmM6nyrnAr4JegimhZM365s9wtmXTJj/chQ6m9g6r821UR0GnI573zudD886hpMD75f3+fY9eWy6zKiL1u+NefyylRPviNbDvdH/wEDfSzh5+732uSGHwU4U673M8PMuM0+TOTnXnesLyCR6ogAFAAA=
+  </data>
+ </layer>
+ <layer name="traps" width="16" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgoA4oZqauOnqZTQ2AzV5i3IKsZqDcjgvgcw+t3ErIXHqFEan2kOsuWvoHX9oixB9JAAATIwPHAAUAAA==
+  </data>
+ </layer>
+ <layer name="Portal" width="16" height="20">
+  <properties>
+   <property name="warp" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgwA2uM+ORHAWjYBSMgiEOANHX5PYABQAA
+  </data>
+ </layer>
+</map>
