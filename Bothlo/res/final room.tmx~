@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="20" tilewidth="30" tileheight="30">
+ <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
+  <image source="res/DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="16" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC32TS6pEMQhEG3rlMeaz7JeBBw42vIHkJlfLstT8fj7j2Xm2n8Wz+2zVfZTNslE+QxbyXRV/6/3oO4Vx6tzC3xWfis0WNwrviLOxzJH7Uv6rWqg3Gt6UBks87JPCCb1Zr1D8Vjz4/m+trOFVPe7R1GmfUDw84HUUR6/QJ5XfeN2HOE60MecprCmMaPhHvuBsxcKfb88KOVP47iu4+NyWAxx4k2frjJbrKAccmQPmC1zX53knv+syv/H91YYcqTzeCe9L74t76D2jRhtzSAzv5EMr/KxZ7wl43PlPr4dw0Y25NDfvIXp4d9c/2FP49Kpr/wfIcuA+AAUAAA==
+  </data>
+ </layer>
+ <layer name="traps" width="16" height="20">
+  <properties>
+   <property name="trap" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC42TAQpEIQhEP3hjtfvvfih4zdqaIBU5OQ3jsOeJb/pc3xzznHO/zgM1jnXVpmCiwDjuVybqEnXaw1GT6MtVuQUwYfs/hu2cla/yiT9Y1auKRH+X97k/haOvC4dosMRTjxBOJ+7Ea978nW9Umq59F5WH1DNdhP16Jy77v5FWe7v7OzWmN+OyP3vSe51vVlRzQj93/DnjnI9huyYnLOuqGe40oM+Vxw2e+q03Pg8q+q0ABQAA
+  </data>
+ </layer>
+ <layer name="warps" width="16" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMgpEJAGWdw/wABQAA
+  </data>
+ </layer>
+</map>
