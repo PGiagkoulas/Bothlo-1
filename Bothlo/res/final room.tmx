@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="16" height="20" tilewidth="30" tileheight="30">
- <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="TileSet" tilewidth="32" tileheight="32">
   <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
  </tileset>
  <layer name="Tile Layer 1" width="16" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC32TS6pEMQhEG3rlMeaz7JeBBw42vIHkJlfLstT8fj7j2Xm2n8Wz+2zVfZTNslE+QxbyXRV/6/3oO4Vx6tzC3xWfis0WNwrviLOxzJH7Uv6rWqg3Gt6UBks87JPCCb1Zr1D8Vjz4/m+trOFVPe7R1GmfUDw84HUUR6/QJ5XfeN2HOE60MecprCmMaPhHvuBsxcKfb88KOVP47iu4+NyWAxx4k2frjJbrKAccmQPmC1zX53knv+syv/H91YYcqTzeCe9L74t76D2jRhtzSAzv5EMr/KxZ7wl43PlPr4dw0Y25NDfvIXp4d9c/2FP49Kpr/wfIcuA+AAUAAA==
+   H4sIAAAAAAAAC3WUyw7DMAgEI/nL/cSf3R4YaULVg2WCYYH1Orc9z/mu+K6Z+0n75r7S7mn3jNlp7/y+eR7pD50PxZyCNXK/it2KCdnk0usqmPR1VJNZQjW3fNgjY0+xiQt9UwP8SP+VHZpltt95t3LA9KzE+5x9KQ7OlmJcL/6cwRl8cn/sU3Oaw64F7m5vHXAP1svV2dAsxNlPn/Blnq3RrZx6v8a6qlH30d76RwvVH4qvPaHTrRz4NR780o/fED1PLbRCL+bGmrUe0Zx75nupd2ObK+p0+eErVNMzGdvaJW8K0290Cg9s+8mHH+r4HswDmqr/L/iDI97FB6gO3XcABQAA
   </data>
  </layer>
  <layer name="traps" width="16" height="20">
-  <properties>
-   <property name="trap" value="true"/>
-  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC42TAQpEIQhEP3hjtfvvfih4zdqaIBU5OQ3jsOeJb/pc3xzznHO/zgM1jnXVpmCiwDjuVybqEnXaw1GT6MtVuQUwYfs/hu2cla/yiT9Y1auKRH+X97k/haOvC4dosMRTjxBOJ+7Ea978nW9Umq59F5WH1DNdhP16Jy77v5FWe7v7OzWmN+OyP3vSe51vVlRzQj93/DnjnI9huyYnLOuqGe40oM+Vxw2e+q03Pg8q+q0ABQAA
+   H4sIAAAAAAAAC5WUiwrFMAhDB/1jH/+/e6HCWXBtF5C9jGlTnY3ril/kvPoMk2vl1L0hKi9nGPK7d4E6AT4jRFP1onlmPQc35TvX5eC75BdKS2t4w3HwFMUzcNSbFf8P6nR72MHG03OeSR7wK5d+2Ac+z6rrOVvU4Jqr39Q7PbtOu+s19sAK1mirnytoD3EvO65Dl/rdHL4hx9N3zq1vuC5r1Vk+OX/tHf5jTvn0gTN4Cvp3A0A53m8ABQAA
   </data>
  </layer>
- <layer name="warps" width="16" height="20">
+ <layer name="warp" width="16" height="20">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC2NgGAWjYBSMgpEJAGWdw/wABQAA
   </data>
