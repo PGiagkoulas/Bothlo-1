@@ -12,7 +12,7 @@ public class Bothlo extends BasicGame {
 	Image arrow;
     Image triangle;
 	
-	public Bothlo(String title) {
+	public Bothlo(String title)throws Exception {
 		super(title);
 		// TODO Auto-generated constructor stub
 	}
@@ -68,9 +68,10 @@ public class Bothlo extends BasicGame {
 
 	/**
 	 * @param args
+	 * @throws Exception 
 	 * @throws SlickException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Bothlo game = new Bothlo("Slick Tutorial");
 		try {

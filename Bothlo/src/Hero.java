@@ -84,6 +84,7 @@ public class Hero extends Character{
 	}
 
 	//changes stats
+	@SuppressWarnings("unused")
 	private void changeStats(int dmgB, int armB){
 
 		//add the bonus difference (new bonus - previous bonus)
@@ -100,7 +101,7 @@ public class Hero extends Character{
 		life -= change;
 	}
 
-	//modifing stats
+	//modifying stats
 	public int modify(int stat, int level, double modifier){
 		stat += level*modifier;
 		return stat;

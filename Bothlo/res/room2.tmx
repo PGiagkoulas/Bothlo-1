@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="16" height="20" tilewidth="30" tileheight="30">
  <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
-  <image source="BothloTryOvr9000/src/DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+  <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
  </tileset>
  <tileset firstgid="3073" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
-  <image source="../../../../Desktop/Bothlo/Bothlo/res/DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+  <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
  </tileset>
  <layer name="Tile Layer 1" width="16" height="20">
   <data encoding="base64" compression="gzip">

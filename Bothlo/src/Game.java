@@ -4,17 +4,17 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 
-public class Game extends StateBasedGame  {
+public class Game extends StateBasedGame{
 
 	public static final String gamename = "Bothlo";
 	public static final int menu = 0;
 	public static final int play = 1;
 	
-	public Game(String gamename){
+	public Game(String gamename)throws Exception{
 		super(gamename);
 		this.addState(new MenuGUI(menu));
 		//creating hero when game starts
-		Hero warrior = Hero.createHeroInstance("warrior", 1, 120, 3, 1,
+	 Hero.createHeroInstance("warrior", 1, 120, 3, 1,
 				10, 8, 0, 0, 1, 
 				3, "Shout", 5, 120,
 				3, -1, 0.5, 
@@ -31,7 +31,7 @@ public class Game extends StateBasedGame  {
 		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		AppGameContainer appgc;
 		try{
 			appgc = new AppGameContainer(new Game(gamename));

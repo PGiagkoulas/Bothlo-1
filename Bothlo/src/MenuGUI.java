@@ -30,7 +30,7 @@ public class MenuGUI extends BasicGameState{
 
 	public void render(GameContainer gr, StateBasedGame sbg, Graphics g) throws SlickException{
 		backroundImg.draw();
-		g.drawString(mouse, 700,270);
+		//g.drawString(mouse, 700,270);
 		buttonImg.draw(340,30);
 		exitImg.draw(375, 322);
 		g.setColor(Color.black);

@@ -6,7 +6,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.Sound;
+
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
@@ -125,7 +125,9 @@ public class GameState extends BasicGameState {
 	public void render(GameContainer arg0, StateBasedGame sbg, Graphics g) throws SlickException {
 		grassMap.render(0,0);
 		Warrior.draw((int)x, (int)y);
-
+		
+		arg0.setSmoothDeltas(true);
+		
 
 
 
@@ -164,6 +166,7 @@ public class GameState extends BasicGameState {
 		float fdelta=delta*0.1f;
 		float xdif= Math.abs(enemyPos.x-x);
 		float ydif= Math.abs(enemyPos.y -y) ;
+		gc.setTargetFrameRate(60);
 
 		//if quit is false move
 		if(quit == false && attack == false && enemyTurn == false){ 						
@@ -498,7 +501,7 @@ public class GameState extends BasicGameState {
 
 			//delaying update for smoooooooooth movement
 			try {
-				Thread.sleep(100);
+				Thread.sleep(60);
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
