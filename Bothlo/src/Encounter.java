@@ -4,7 +4,7 @@ public class Encounter {
 	protected String name;
 	protected int attribute;
 
-	//constructor
+	//Basic constructor
 	public Encounter(String name, int attribute){
 
 		this.name = name;
