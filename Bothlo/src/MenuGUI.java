@@ -22,6 +22,7 @@ public class MenuGUI extends BasicGameState{
 	}
 
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException{
+		//Images path
 		backroundImg = new Image("res/backroundImg.jpg");
 		buttonImg = new Image("res/buttonImg.png");
 		exitImg = new Image("res/exitImg.png");
@@ -29,8 +30,8 @@ public class MenuGUI extends BasicGameState{
 	}
 
 	public void render(GameContainer gr, StateBasedGame sbg, Graphics g) throws SlickException{
-		backroundImg.draw();
-		//g.drawString(mouse, 700,270);
+		//First Screen Build
+		backroundImg.draw();		
 		buttonImg.draw(340,30);
 		exitImg.draw(375, 322);
 		g.setColor(Color.black);
@@ -43,10 +44,11 @@ public class MenuGUI extends BasicGameState{
 		Input input = gc.getInput();
 		int xpos = Mouse.getX();
 		int ypos = Mouse.getY();
-		mouse = "X: "+xpos+" Y: "+ypos;
+		
 		// play button
 		if((xpos > 340 && xpos <547 )&&(ypos>320)&&(ypos<351)){
 			if(input.isMouseButtonDown(0)){
+				//Game window attributes
 				AppGameContainer apgc = (AppGameContainer)gc;
 				apgc.setDisplayMode(1000, 600, false);
 				sbg.enterState(1);
