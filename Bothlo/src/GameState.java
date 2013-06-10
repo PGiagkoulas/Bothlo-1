@@ -126,6 +126,8 @@ public class GameState extends BasicGameState  {
 		grassMap.render(0,0);
 		Warrior.draw((int)x, (int)y);
 		g.setColor(Color.white);
+		//Tutorial Session At the Right of the Game Screen
+		g.drawString("TUTORIAL:", 485, 0);
 		g.drawString("To Begin the Adventure Press Up", 485, 32);
 		g.drawString("Press S to Unlock Movement", 485, 64);
 		g.drawString("Move with the Arrows (Up, Down, Left, Right)", 485, 96);
@@ -136,8 +138,10 @@ public class GameState extends BasicGameState  {
 		g.drawString("While in Attack Mode Press S to unlock movement",485,250);
 		g.drawString("When you are done moving Press E to begin enemy turn",485,280);
 		g.drawString("Every time you change room Press S to unlock movement",485,320);
+		//String to let User know if they have any more available movements for this round 
 		g.drawString("Movement Left: ", 485, 350);
 		g.drawString(""+(int)(Hero.getHeroInstance().getMovement() - (heroMovement/SIZE)), 700, 350);
+		//Movement Locked / Unlocked Message so that the user knows when to press S to move
 		if(attack==true){
 			g.drawString("Movement Locked", 485,400);
 		}else{
@@ -147,17 +151,18 @@ public class GameState extends BasicGameState  {
 		
 		g.drawString("Menu : Esc",485,220);
 				
-		arg0.setSmoothDeltas(true);
+		
 		
 
 
-
+		//Hero HP String
 		g.setColor(org.newdawn.slick.Color.cyan);
 		g.drawString("HP:"+Hero.getHeroInstance().getLife(), x-7 , y-12);
-
+		
+		//If Hero's HP drops under 0 ---> GAME OVER
 		if(Hero.getHeroInstance().getLife()<=0){
 
-
+			//Game Over message
 			JOptionPane.showMessageDialog (null, "You failed your Quest!", "GAME OVER", JOptionPane.WARNING_MESSAGE);	
 			NewGame(arg0,sbg,g);
 			level=0;
@@ -165,15 +170,17 @@ public class GameState extends BasicGameState  {
 
 
 		}
-
+		//If Demon's HP drop under 0 he isnt drawn on the screen anymore
 		if(BothloE.getLife()>0){
 			Bothlo.draw((int)enemyPos.x, (int)enemyPos.y);
-			g.setColor(org.newdawn.slick.Color.red);
+			//Bothlo's HP
+			g.setColor(Color.red);
 			g.drawString("HP: "+BothloE.getLife(),enemyPos.x - 7, enemyPos.y-12);
 		}
 
-		//when they press escape
+		//when user press's escape
 		if(quit==true){
+			//Menu
 			inGameMenu.drawCentered(250, 300);	
 			if(quit==false){
 				g.clear();
@@ -189,49 +196,53 @@ public class GameState extends BasicGameState  {
 		float ydif= Math.abs(enemyPos.y -y) ;
 		gc.setTargetFrameRate(60);
 
-		//if quit is false move
+		//if quit is false and attack mode is false and it's not enemy's turn THEN move 
 		if(quit == false && attack == false && enemyTurn == false){ 						
 
 
-			//checking maximum movement reached
+			//checking if maximum movement is reached
 			
 			if(heroMovement < Hero.getHeroInstance().getMovement()*SIZE){
 				
+				//What to do when UP is pressed
 				if (input.isKeyPressed(Input.KEY_UP))
 				{
 					
 					Warrior = upW;
 
 
-					
+					//Begin Adventure when up is pressed
 					if(counter == 0 && level ==0){
 						JOptionPane.showMessageDialog (null, "This once was a peacefull land but some evil has corrupted it!", "", JOptionPane.INFORMATION_MESSAGE);
 						JOptionPane.showMessageDialog (null, "Oh no! \n It's the evil demon Bothlo!", "", JOptionPane.INFORMATION_MESSAGE);
 						JOptionPane.showMessageDialog (null, "You have to take the demon back to it's lair where it can be damaged and defeat it!", "QUEST", JOptionPane.WARNING_MESSAGE);
 						counter ++;
 					}
+					//Used counter to fight off the "When a JOptionPane is on Champion's movement goes crazy" Bug
 					if(counter==1){
 						attack=true;
 					}
-					
+					//Boundaries
 					if(y <0)
 						y=0;
 
-					
+					//Check if square is Trap
 					if ((isTrap(x, y) || isTrap(x+SIZE-1, y)))
 					{
+						//Due to update methor champ takes massive amounds of damage so we made this check
 						if(!tookDamage){
+							//Decrease Champs HP
 							Hero.getHeroInstance().changeLife(3);
 
-							
+							//A champ cant take damage from more than 1 Trap at a turn
 							tookDamage = true;
 						}
 					}
-
+					//To change room
 					if ((isWarp(x + SIZE , y) || isWarp(x + SIZE , y+SIZE-1)))
 					{
 						if(level==1){
-							
+							//Setting options for new room
 							attack=true;
 							input.clearControlPressedRecord();
 							input.clearKeyPressedRecord();
@@ -260,18 +271,18 @@ public class GameState extends BasicGameState  {
 					y -= SIZE;
 					heroMovement += SIZE;
 				}
-
+				//What to do when Down is pressed
 				else if (input.isKeyPressed(Input.KEY_DOWN))
 				{
 					Warrior = downW;
 					input.consumeEvent();
 					
-					//character limit on back movement
+					//Boundaries
 					if (y>569)
 						y=569;
 
 					
-
+					//Trap check
 					if ((isTrap(x, y + SIZE ) || isTrap(x+SIZE-1, y + SIZE )))
 					{
 						if(!tookDamage){
@@ -280,6 +291,7 @@ public class GameState extends BasicGameState  {
 							tookDamage = true;
 						}
 					}
+					//Next Room check
 					if ((isWarp(x + SIZE, y) || isWarp(x + SIZE, y+SIZE-1)))
 					{
 						if(level==1){
@@ -306,6 +318,7 @@ public class GameState extends BasicGameState  {
 					y += SIZE;
 					heroMovement += SIZE;
 				}
+				//What to do when LEFT is pressed
 				else if (input.isKeyPressed(Input.KEY_LEFT))
 				{
 					Warrior = leftW;
@@ -356,6 +369,7 @@ public class GameState extends BasicGameState  {
 					
 					heroMovement += SIZE;
 				}
+				//What to do when RIGHT is pressed
 				else if (input.isKeyPressed(Input.KEY_RIGHT))
 				{
 					Warrior = rightW;
@@ -407,11 +421,12 @@ public class GameState extends BasicGameState  {
 			}
 		}
 
-		//attack mode
+		//Activating attack mode
 		if(input.isKeyDown(Input.KEY_A)){
 			attack = true;
 			
 		}
+		//Check so that Bothlo takes damage only in the FINAL room
 		if(attack == true && commitedAttack==false){
 			if(xdif<=32 && ydif<=32){
 				
@@ -421,12 +436,13 @@ public class GameState extends BasicGameState  {
 					commitedAttack = true;
 					attack=false;
 				}	
-				
+				//If Bothlo is Alive he is being Drawn
 				if(!isDead(BothloE)){
 					
 						
 						Bothlo.draw(enemyPos.x,enemyPos.y);
 				}
+				//If Bothlo Dies a Message will appear to notify user that he is Victorious
 				if(isDead(BothloE)){
 					try {
 						
@@ -443,13 +459,14 @@ public class GameState extends BasicGameState  {
 			}
 
 		}
+		//Exit Attack mode when S is pressed
 		if(input.isKeyDown(Input.KEY_S)){
 			attack = false;
 			counter++;
 			input.clearKeyPressedRecord();
 		}
 
-		//end turn mode
+		//end turn when E is pressed
 		if(input.isKeyPressed(Input.KEY_E)){			
 			enemyTurn = true;	
 			tookDamage = false;
@@ -458,7 +475,7 @@ public class GameState extends BasicGameState  {
 				input.clearKeyPressedRecord();
 				System.exit(0);
 			}
-
+			//Reset Hero's available movement back to original
 			heroMovement = 0;	
 			
 
@@ -469,7 +486,7 @@ public class GameState extends BasicGameState  {
 			//checking maximum movement for enemy 
 
 			if(enemyMovement<=3*SIZE)	{
-				//magic calculations!!
+				//magic calculations for AI Chase!!
 				xdif = Math.abs(enemyPos.x - x);
 				ydif = Math.abs(enemyPos.y - y);
 				if ( xdif > ydif ) {
@@ -502,6 +519,7 @@ public class GameState extends BasicGameState  {
 				if ( enemyPos.y > y )
 					l*=-1;
 				enemyPos.translate((int)k, (int)l);
+				//if Enemy gets near Champ he WILL ATTACK!!!!
 				if(xdif<=32 && ydif<=32){
 					enemyTurn = false;
 					commitedAttack=false;
@@ -538,6 +556,7 @@ public class GameState extends BasicGameState  {
 
 		//when they hit escape
 		if(quit==true){
+			//Key listeners when in in-Game Menu
 			if(input.isKeyDown(Input.KEY_R)){
 				quit = false;
 			}
@@ -551,6 +570,7 @@ public class GameState extends BasicGameState  {
 					e.printStackTrace();
 				}
 			}
+			//Quit Game
 			if(input.isKeyDown(Input.KEY_Q)){
 				System.exit(0);
 			}
@@ -559,7 +579,7 @@ public class GameState extends BasicGameState  {
 
 
 
-
+	//Pretty obvious Methods
 	private boolean isWarp(float xi, float yi)
 	{
 		int xBlock = (int)xi / SIZE;
@@ -598,6 +618,7 @@ public class GameState extends BasicGameState  {
 	public int getID() {
 		return 1;
 	}
+	//New Game method so that when user loses and get's back to the first screen, when they hit Start the adventure Champ's and Bothlo's Position and HP should me re-initialized 
 	public void NewGame(GameContainer arg0, StateBasedGame sbg, Graphics g) throws SlickException{
 		Hero.getHeroInstance().setLife(120);
 		BothloE.setLife(120);
@@ -616,11 +637,13 @@ public class GameState extends BasicGameState  {
 		enemyPos.x= 240;
 		enemyPos.y= 240;
 	}
+	//Method to check i a unit is DEAD
 	public boolean isDead(Enemy E){
 		if(E.getLife()<=0){
 			return true;
 		}
-		else return false;}
+		else return false;
+	}
 
 
 
