@@ -6,7 +6,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Game extends StateBasedGame {
 
-	public static final String gamename = "Bothlo";
+	public static final String gamename = "Bothlo - The Volcano Demon";
 	public static final int menu = 0;
 	public static final int play = 1;
 	
@@ -39,7 +39,7 @@ public class Game extends StateBasedGame {
 		}
 		
 	}
-	
+	//First Screen
 	public static void main(String[] args) throws Exception{
 		AppGameContainer appgc;
 		try{
