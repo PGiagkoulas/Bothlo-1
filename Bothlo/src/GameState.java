@@ -6,7 +6,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
-
+import org.newdawn.slick.Color;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
@@ -125,7 +125,18 @@ public class GameState extends BasicGameState  {
 	public void render(GameContainer arg0, StateBasedGame sbg, Graphics g) throws SlickException {
 		grassMap.render(0,0);
 		Warrior.draw((int)x, (int)y);
-		
+		g.setColor(Color.white);
+		g.drawString("To Begin the Adventure Press Up", 485, 32);
+		g.drawString("Press S to Unlock Movement", 485, 64);
+		g.drawString("Move with the Arrows (Up, Down, Left, Right", 485, 96);
+		g.drawString("You can move only 3 squares at a", 485, 128);
+		g.drawString("    time so use them wisely", 485,160); 
+		g.drawString("Objective: Get to the final stage to kill The Demon",485,192);
+		g.drawString("To Attack : Press A when near Enemy",485,220);
+		g.drawString("While in Attack Mode Press S to unlock movement",485,250);
+		g.drawString("When you are done moving Press E to begin enemy turn",485,280);
+		g.drawString("Every time you change room Press S to unlock movement",485,320);
+				
 		arg0.setSmoothDeltas(true);
 		
 

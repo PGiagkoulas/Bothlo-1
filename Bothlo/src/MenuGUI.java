@@ -48,7 +48,7 @@ public class MenuGUI extends BasicGameState{
 		if((xpos > 340 && xpos <547 )&&(ypos>320)&&(ypos<351)){
 			if(input.isMouseButtonDown(0)){
 				AppGameContainer apgc = (AppGameContainer)gc;
-				apgc.setDisplayMode(482, 600, false);
+				apgc.setDisplayMode(1000, 600, false);
 				sbg.enterState(1);
 			}
 		}
