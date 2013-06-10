@@ -43,7 +43,7 @@ public class GameState extends BasicGameState  {
 	private float k = 240f, l = 192f;
 
 	private Point enemyPos = new Point((int)k,(int)l);
-
+	//map list
 	private String[] maps = {"res/room2.tmx" , "res/room3.tmx" , "res/final room.tmx"};
 	private int level = 0;
 
