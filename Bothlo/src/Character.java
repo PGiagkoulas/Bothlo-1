@@ -30,30 +30,36 @@ public class Character extends Encounter{
 		this.lifeModifier = lifeModifier;
 		this.damageModifier = damageModifier;
 	}
+	//getters & setters
 	public int getLife() {
 		return life;
 	}
 	public void setLife(int life) {
 		this.life = life;
 	}
+	//Get how many squares a Champ can move per round (speed)
 	public int getMovement() {
 		return movement;
 	}
+	//Change Champ speed
 	public void setMovement(int movement) {
 		this.movement = movement;
 	}
+	//If we build a ranger class
 	public int getRange() {
 		return range;
 	}
 	public void setRange(int range) {
 		this.range = range;
 	}
+	//Main Defence Parameter
 	public int getArmor() {
 		return armor;
 	}
 	public void setArmor(int armor) {
 		this.armor = armor;
 	}
+	//Champion Level
 	public int getLevel() {
 		return level;
 	}
