@@ -136,6 +136,13 @@ public class GameState extends BasicGameState  {
 		g.drawString("While in Attack Mode Press S to unlock movement",485,250);
 		g.drawString("When you are done moving Press E to begin enemy turn",485,280);
 		g.drawString("Every time you change room Press S to unlock movement",485,320);
+		g.drawString("Movement Left: ", 485, 350);
+		g.drawString(""+(Hero.getHeroInstance().getMovement() - (heroMovement/SIZE)), 700, 350);
+		if(attack==true){
+			g.drawString("Movement Locked", 485,400);
+		}else{
+			g.drawString("Movement Unlocked", 485,400);
+		}
 				
 		arg0.setSmoothDeltas(true);
 		
