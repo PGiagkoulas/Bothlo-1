@@ -128,7 +128,7 @@ public class GameState extends BasicGameState  {
 		g.setColor(Color.white);
 		g.drawString("To Begin the Adventure Press Up", 485, 32);
 		g.drawString("Press S to Unlock Movement", 485, 64);
-		g.drawString("Move with the Arrows (Up, Down, Left, Right", 485, 96);
+		g.drawString("Move with the Arrows (Up, Down, Left, Right)", 485, 96);
 		g.drawString("You can move only 3 squares at a", 485, 128);
 		g.drawString("    time so use them wisely", 485,160); 
 		g.drawString("Objective: Get to the final stage to kill The Demon",485,192);
@@ -137,7 +137,7 @@ public class GameState extends BasicGameState  {
 		g.drawString("When you are done moving Press E to begin enemy turn",485,280);
 		g.drawString("Every time you change room Press S to unlock movement",485,320);
 		g.drawString("Movement Left: ", 485, 350);
-		g.drawString(""+(Hero.getHeroInstance().getMovement() - (heroMovement/SIZE)), 700, 350);
+		g.drawString(""+(int)(Hero.getHeroInstance().getMovement() - (heroMovement/SIZE)), 700, 350);
 		if(attack==true){
 			g.drawString("Movement Locked", 485,400);
 		}else{
@@ -220,7 +220,7 @@ public class GameState extends BasicGameState  {
 						if(!tookDamage){
 							Hero.getHeroInstance().changeLife(3);
 
-							//System.out.println(Hero.getHeroInstance().getLife());
+							
 							tookDamage = true;
 						}
 					}
@@ -407,7 +407,7 @@ public class GameState extends BasicGameState  {
 		//attack mode
 		if(input.isKeyDown(Input.KEY_A)){
 			attack = true;
-			System.out.println("Currently in attack mode");
+			
 		}
 		if(attack == true && commitedAttack==false){
 			if(xdif<=32 && ydif<=32){
@@ -457,7 +457,7 @@ public class GameState extends BasicGameState  {
 			}
 
 			heroMovement = 0;	
-			System.out.println("Currently in enemy turn");
+			
 
 		}
 
