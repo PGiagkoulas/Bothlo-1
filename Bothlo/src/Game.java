@@ -4,7 +4,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 
-public class Game extends StateBasedGame{
+public class Game extends StateBasedGame {
 
 	public static final String gamename = "Bothlo";
 	public static final int menu = 0;
@@ -12,22 +12,31 @@ public class Game extends StateBasedGame{
 	
 	public Game(String gamename)throws Exception{
 		super(gamename);
-		this.addState(new MenuGUI(menu));
+		try{		
+			this.addState(new MenuGUI(menu));
 		//creating hero when game starts
-	 Hero.createHeroInstance("warrior", 1, 120, 3, 1,
+			Hero.createHeroInstance("warrior", 1, 120, 3, 1,
 				10, 8, 0, 0, 1, 
 				3, "Shout", 5, 120,
 				3, -1, 0.5, 
 				0.2);
 		
-		this.addState(new GameState(play));
+			this.addState(new GameState(play));
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		
 	}
 	
 	@Override
 	public void initStatesList(GameContainer gc) throws SlickException {
-		this.getState(menu).init(gc, this);
-		this.getState(play).init(gc, this);
-		this.enterState(menu);
+		try{
+			this.getState(menu).init(gc, this);		
+			this.getState(play).init(gc, this);
+			this.enterState(menu);
+		}catch(SlickException e){
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -37,7 +46,7 @@ public class Game extends StateBasedGame{
 			appgc = new AppGameContainer(new Game(gamename));
 			appgc.setDisplayMode(900, 384, false);
 			appgc.start();
-		}catch(SlickException e){
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		

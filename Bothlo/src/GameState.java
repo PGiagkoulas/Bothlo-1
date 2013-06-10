@@ -17,7 +17,7 @@ import java.awt.*;
 
 import javax.swing.JOptionPane;
 
-public class GameState extends BasicGameState {
+public class GameState extends BasicGameState  {
 
 	private TiledMap grassMap;
 	private Animation Warrior , upW ,downW,leftW,rightW;
