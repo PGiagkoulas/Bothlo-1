@@ -143,6 +143,9 @@ public class GameState extends BasicGameState  {
 		}else{
 			g.drawString("Movement Unlocked", 485,400);
 		}
+		
+		
+		g.drawString("Menu : Esc",485,220);
 				
 		arg0.setSmoothDeltas(true);
 		
