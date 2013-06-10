@@ -4,6 +4,16 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 
+
+//YPARXOUN KAPOIES METHODOI OI OPOIES DEN YLOPOIITHIKAN GIATI THA YLOPOIITHOUN STO MELLON SE KAPOIO TYXON EXPANSION
+//APO TIS APAITISEIS DEN YLOPOIITHIKAN:
+	// TO PLITHOS TWN IRWWN (ANTI GIA 4 EINAI 1) GIATI EIXAME PROVLIMA ME TIS PAGIDES KAI TIN EPITHESI
+	// TO INVENTORY 
+	// TA POTION KAI TA RUNES 
+	//KAI TIN VASI DEDOMENWN DATA GIATI DEN XREIASTIKE SE AYTI TIN VERSION TOU PROJECT
+	//KAI EPISIS DEN KATAFERAME NA DIMIOURGISOUME Runnable .jar arxeio 
+
+
 public class Game extends StateBasedGame {
 
 	public static final String gamename = "Bothlo - The Volcano Demon";
@@ -39,6 +49,10 @@ public class Game extends StateBasedGame {
 		}
 		
 	}
+	
+	
+
+	
 	//First Screen
 	public static void main(String[] args) throws Exception{
 		AppGameContainer appgc;
