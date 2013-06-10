@@ -12,7 +12,8 @@ public class Hero extends Character{
 	
 	private boolean selected = false;
 	private static Hero hero;
-	private static Hero bothlo;
+	
+	@SuppressWarnings("unused")
 	private static int created = 0; //see if hero was created, later use for number of heros?
 
 	//constructor
@@ -43,24 +44,16 @@ public class Hero extends Character{
 			int maxSpecial, int equippedItemAttribute, double lifeModifier,
 			double damageModifier){
 
-		if(created == 0){
-			hero = new Hero( name,  attribute,  life,  movement,  range,
-					damage,  armor,  positionX,  positionY,  level,
-					special,  abilityName,  abilityAttribute,  maxLife,
-					maxSpecial,  equippedItemAttribute,  lifeModifier,
-					damageModifier);
-			created ++;
+		hero = new Hero( name,  attribute,  life,  movement,  range,
+						damage,  armor,  positionX,  positionY,  level,
+						special,  abilityName,  abilityAttribute,  maxLife,
+						maxSpecial,  equippedItemAttribute,  lifeModifier,
+						damageModifier);
+			
 			return hero;
-		}
+		
 
-		bothlo = new Hero( name,  attribute,  life,  movement,  range,
-				damage,  armor,  positionX,  positionY,  level,
-				special,  abilityName,  abilityAttribute,  maxLife,
-				maxSpecial,  equippedItemAttribute,  lifeModifier,
-				damageModifier);
-
-		created ++;
-		return bothlo;
+		
 
 
 	}
@@ -69,9 +62,7 @@ public class Hero extends Character{
 		return hero;
 	}
 	
-	public static Hero getBothloInstance(){
-		return bothlo;
-	}
+	
 
 	//selects character
 	public void selectChar(){
@@ -83,7 +74,7 @@ public class Hero extends Character{
 		selected = false;
 	}
 
-	//changes stats
+	//changes stats ready to use when we expand the project
 	@SuppressWarnings("unused")
 	private void changeStats(int dmgB, int armB){
 
