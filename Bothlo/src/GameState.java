@@ -149,7 +149,7 @@ public class GameState extends BasicGameState  {
 		}
 		
 		
-		g.drawString("Menu : Esc",485,220);
+		g.drawString("Menu : Esc",485,500);
 				
 		
 		
